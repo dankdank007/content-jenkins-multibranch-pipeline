@@ -39,8 +39,10 @@ pipeline {
         sh 'git merge development'
         echo "Git Push to Origin"
         sh 'git push origin master'
+		echo "LALALALALALALLALALALALALLALALALLALALAL"
       }
     }
+	
     stage('Tagging the Release') {
       when {
         branch 'master'
@@ -55,10 +57,11 @@ pipeline {
             subject: "${env.JOB_NAME} [${env.BUILD_NUMBER}] NEW RELEASE",
             body: """<p>'${env.JOB_NAME} [${env.BUILD_NUMBER}]' NEW RELEASE":</p>
             <p>Check console output at <a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a></p>""",
-            to: "brandon@linuxacademy.com"
+            to: "dhyaneshdsk@yahoo.co.nz"
           )
         }
       }
     }
   }
 }
+
